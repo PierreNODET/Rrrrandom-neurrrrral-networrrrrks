@@ -1,0 +1,3 @@
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o : Dans la fonction « _start » :
+(.text+0x20) : référence indéfinie vers « main »
+collect2: error: ld returned 1 exit status
