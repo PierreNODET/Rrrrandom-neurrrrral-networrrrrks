@@ -26,3 +26,7 @@ void Neuron::SetWeightNeg(const int a){
 void Neuron::SetRate(const int a){
   rate=a;
 }
+
+float Neuron::Output(float inputPos, float inputNeg){
+  return GetWeightPos()*inputPos/(1+GetWeightNeg()*inputNeg);
+}

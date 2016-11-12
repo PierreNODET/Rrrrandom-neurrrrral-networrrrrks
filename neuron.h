@@ -15,6 +15,8 @@ class Neuron
     void SetWeightNeg (const int weight_neg);
     void SetRate (const int rate);
 
+    float Output(float inputPos, float inputNeg);
+
   private:
     int weight_pos;
     int weight_neg;
