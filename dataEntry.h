@@ -4,8 +4,11 @@
 #include <vector>
 
 struct DataEntry{
-  std::vector<int> predictor[];
-  std::vector<int> predicted[];
+  std::vector<float> predictor;
+  std::vector<float> predicted;
+
 };
+
+
 
 #endif // DATAENTRY_H_

@@ -1,29 +1,29 @@
 #include "neuron.h"
 
-Neuron::Neuron(int a, int b, int c):weight_pos(a),weight_neg(b),rate(c){
+Neuron::Neuron(float a, float b, float c):weight_pos(a),weight_neg(b),rate(c){
 };
 
-int Neuron::GetWeightPos() const {
+float Neuron::GetWeightPos() const {
   return weight_pos;
 }
 
-int Neuron::GetWeightNeg() const {
+float Neuron::GetWeightNeg() const {
   return weight_neg;
 }
 
-int Neuron::GetRate() const {
+float Neuron::GetRate() const {
   return rate;
 }
 
-void Neuron::SetWeightPos(const int a){
+void Neuron::SetWeightPos(const float a){
   weight_pos=a;
 }
 
-void Neuron::SetWeightNeg(const int a){
+void Neuron::SetWeightNeg(const float a){
   weight_neg=a;
 }
 
-void Neuron::SetRate(const int a){
+void Neuron::SetRate(const float a){
   rate=a;
 }
 

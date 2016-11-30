@@ -1,1 +1,4 @@
 *.gch
+*.o
+main
+compiling_error.txt

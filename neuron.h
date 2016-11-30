@@ -5,22 +5,22 @@ class Neuron
 {
 
   public:
-    Neuron(int weight_pos, int weight_neg, int rate);
+    Neuron(float weight_pos, float weight_neg, float rate);
 
-    int GetWeightPos () const;
-    int GetWeightNeg () const;
-    int GetRate () const;
+    float GetWeightPos () const;
+    float GetWeightNeg () const;
+    float GetRate () const;
 
-    void SetWeightPos (const int weight_pos);
-    void SetWeightNeg (const int weight_neg);
-    void SetRate (const int rate);
+    void SetWeightPos (const float weight_pos);
+    void SetWeightNeg (const float weight_neg);
+    void SetRate (const float rate);
 
     float Output(float inputPos, float inputNeg);
 
   private:
-    int weight_pos;
-    int weight_neg;
-    int rate;
+    float weight_pos;
+    float weight_neg;
+    float rate;
 
 };
 

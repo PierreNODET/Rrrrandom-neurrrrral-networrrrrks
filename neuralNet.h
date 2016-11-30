@@ -2,6 +2,7 @@
 #define NEURALNET_H_
 
 #include "neuron.h"
+#include "dataEntry.h"
 #include <vector>
 
 class NeuralNet
@@ -18,7 +19,7 @@ class NeuralNet
     std::vector<Neuron> GetHiddenNeuronTable () const;
     std::vector<Neuron> GetOutputNeuronTable () const;
 
-    float Ouput(float input[][]);
+    std::vector<DataEntry> Ouput(std::vector<DataEntry>);
 
   private:
     const int input_number;
