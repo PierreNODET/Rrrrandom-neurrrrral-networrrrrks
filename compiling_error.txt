@@ -1,3 +1,0 @@
-/tmp/ccJsMejo.o : Dans la fonction « main » :
-main.cpp:(.text+0x9) : référence indéfinie vers « DataReader::GetInstance() »
-collect2: error: ld returned 1 exit status
