@@ -1,7 +1,6 @@
 #ifndef NEURALNET_H_
 #define NEURALNET_H_
 
-#include "neuron.h"
 #include "dataEntry.h"
 #include <vector>
 
@@ -15,20 +14,38 @@ class NeuralNet
     int GetHiddenNumber () const;
     int GetOutputNumber () const;
 
-    std::vector<Neuron> GetInputNeuronTable () const;
-    std::vector<Neuron> GetHiddenNeuronTable () const;
-    std::vector<Neuron> GetOutputNeuronTable () const;
+    std::vector<float> GetInputNeuron () const;
+    std::vector<float> GetHiddenNeuron () const;
+    std::vector<float> GetOutputNeuron () const;
 
-    std::vector<DataEntry> Ouput(std::vector<DataEntry>);
+    std::vector<float> GetInputRate () const;
+    std::vector<float> GetHiddenRate () const;
+    std::vector<float> GetOutputRate () const;
+
+    std::vector<std::vector<float>> GetInputHiddenPosWeight () const;
+    std::vector<std::vector<float>> GetHiddenOutputPosWeight () const;
+    std::vector<std::vector<float>> GetInputHiddenNegWeight () const;
+    std::vector<std::vector<float>> GetHiddenOutputNegWeight () const;
+
+    std::vector<DataEntry> Output(std::vector<DataEntry>);
 
   private:
     const int input_number;
     const int hidden_number;
     const int output_number;
 
-    std::vector<Neuron> input_neuron_table;
-    std::vector<Neuron> hidden_neuron_table;
-    std::vector<Neuron> output_neuron_table;
+    std::vector<float> input_neuron;
+    std::vector<float> hidden_neuron;
+    std::vector<float> output_neuron;
+
+    std::vector<float> input_rate;
+    std::vector<float> hidden_rate;
+    std::vector<float> output_rate;
+
+    std::vector<std::vector<float>> input_hidden_pos_weight;
+    std::vector<std::vector<float>> hidden_output_pos_weight;
+    std::vector<std::vector<float>> input_hidden_neg_weight;
+    std::vector<std::vector<float>> hidden_output_neg_weight;
 
 };
 
