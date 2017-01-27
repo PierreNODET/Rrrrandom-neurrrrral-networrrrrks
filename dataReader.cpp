@@ -15,27 +15,40 @@ std::vector<DataEntry> DataReader::ReadFile(std::string file_name, char separato
 
   std::ifstream file(file_name);
 
-  std::string data;
+  std::string s;
 
-  while (getline(file,data,separator)){
+  while (file.good()){
 
-    DataEntry data_entry;
+    getline(file,s);
 
-    int count_predictor=0;
-    int count_predicted=0;
+    if (s.length()>2){
 
-    while(count_predictor<length_predictor){
-      data_entry.predictor.push_back(std::stof(data));
-      count_predictor+=1;
+      size_t pos = 0;
+      std::string token;
+
+      DataEntry data_entry;
+
+      int count_predictor=0;
+      int count_predicted=0;
+
+      while((count_predictor<length_predictor) & ((pos = s.find(separator)) != std::string::npos)){
+        token = s.substr(0, pos);
+        data_entry.predictor.push_back(std::stof(s));
+        s.erase(0, pos + 1);
+        count_predictor+=1;
+      }
+
+      while((count_predicted<length_predicted-1) & ((pos = s.find(separator)) != std::string::npos)){
+        token = s.substr(0, pos);
+        data_entry.predicted.push_back(std::stof(s));
+        count_predicted+=1;
+        s.erase(0, pos + 1);
+      }
+
+      data_entry.predicted.push_back(std::stof(s));
+
+      data_set.push_back(data_entry);
     }
-
-    while(count_predicted<length_predicted){
-      data_entry.predicted.push_back(std::stof(data));
-      count_predicted+=1;
-    }
-
-    data_set.push_back(data_entry);
-
   }
 
   return data_set;

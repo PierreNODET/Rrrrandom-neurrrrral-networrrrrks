@@ -6,9 +6,6 @@
 struct DataEntry{
   std::vector<float> predictor;
   std::vector<float> predicted;
-
 };
-
-
 
 #endif // DATAENTRY_H_

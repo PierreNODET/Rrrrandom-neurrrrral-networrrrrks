@@ -6,8 +6,7 @@
 
 #include "dataEntry.h"
 
-class DataReader{
-
+class DataReader {
   public:
     static DataReader& GetInstance();
     std::vector<DataEntry> ReadFile(std::string file_name, char separator, int length_predictor, int length_predicted);
@@ -18,7 +17,6 @@ class DataReader{
 
     void operator= (const DataReader&){}
     DataReader (const DataReader&){}
-
 };
 
 
